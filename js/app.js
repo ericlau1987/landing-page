@@ -22,6 +22,8 @@
  * Define Global Variables
  * 
 */
+var sections_count = 0
+let sections_list = []
 
 
 /**
@@ -39,6 +41,17 @@
 */
 
 // build the nav
+function return_sessions() {
+    const sections_list = document.querySelectorAll('section')
+    let sections_nav = []
+    // const sections_count = sections_list.length
+    // console.log('There are ' + sections_count + ' sessions')
+    for (let i=0; i<sections_list.length; i++) {
+        sections_nav.append(sections_list[i].getAttribute("data-nav"))
+    }
+    return sections_nav
+}
+sections_list = sections_list()
 
 
 // Add class 'active' to section when near top of viewport
