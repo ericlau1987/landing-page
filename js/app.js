@@ -57,6 +57,8 @@ function create_nav_bar(sections_list) {
         var newElment = document.createElement('li')
         var a = document.createElement('a')
         a.classList.add("menu__link")
+        a.id = "menu__link__section" + (i+1)
+        // a.href = "#section" + (i+1)
         a.innerText = sections_list[i]
         newElment.appendChild(a)
         fragment.appendChild(newElment)
@@ -73,7 +75,19 @@ function change_nav_bar_color(font_color) {
 
 
 // Scroll to anchor ID using scrollTO event
+function scrolling_to_section(event){
 
+    var e = event.target
+    if (e.id.includes("menu__link__section")) {
+        target_session = e.id.replace("menu__link__", "")
+        document.getElementById(target_session).scrollIntoView(
+            {
+                behavior: 'smooth'
+            }
+        )
+    }
+    
+}
 
 /**
  * End Main Functions
@@ -85,9 +99,10 @@ function change_nav_bar_color(font_color) {
 sections_list = return_sessions()
 create_nav_bar(sections_list)
 change_nav_bar_color("black")
+
 // Scroll to section on link click
 
-
+document.addEventListener('click',  scrolling_to_section)
 
 // Set sections as active
 
