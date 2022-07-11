@@ -97,8 +97,10 @@ function scrolling_to_section(event){
 
 // Build menu 
 sections_list = return_sessions()
-create_nav_bar(sections_list)
-change_nav_bar_color("black")
+if (sections_list) {
+    create_nav_bar(sections_list)
+    change_nav_bar_color("black")
+}
 
 // Scroll to section on link click
 
