@@ -22,16 +22,23 @@
  * Define Global Variables
  * 
 */
-var sections_count = 0
-let sections_list = []
-
+let sections_list = 0
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
+function return_sessions() {
+    const sections_list = document.querySelectorAll('section')
+    var sections_nav = []
 
+    for (let i=0; i<sections_list.length; i++) {
+        curElement = sections_list[i].getAttribute("data-nav")
+        sections_nav.push(curElement)
+    }
+    return sections_nav
+}
 
 
 /**
@@ -41,18 +48,26 @@ let sections_list = []
 */
 
 // build the nav
-function return_sessions() {
-    const sections_list = document.querySelectorAll('section')
-    let sections_nav = []
-    // const sections_count = sections_list.length
-    // console.log('There are ' + sections_count + ' sessions')
-    for (let i=0; i<sections_list.length; i++) {
-        sections_nav.append(sections_list[i].getAttribute("data-nav"))
-    }
-    return sections_nav
-}
-sections_list = sections_list()
+function create_nav_bar(sections_list) {
+    
+    var ul = document.getElementById("navbar__list")
+    var fragment = document.createDocumentFragment()
 
+    for (let i=0; i<sections_list.length; i++) {
+        var newElment = document.createElement('li')
+        var a = document.createElement('a')
+        a.classList.add("menu__link")
+        a.innerText = sections_list[i]
+        newElment.appendChild(a)
+        fragment.appendChild(newElment)
+    }
+    ul.appendChild(fragment)
+}
+
+function change_nav_bar_color(font_color) {
+
+    document.getElementById("navbar__list").style.color = font_color
+}
 
 // Add class 'active' to section when near top of viewport
 
@@ -67,8 +82,12 @@ sections_list = sections_list()
 */
 
 // Build menu 
-
+sections_list = return_sessions()
+create_nav_bar(sections_list)
+change_nav_bar_color("black")
 // Scroll to section on link click
+
+
 
 // Set sections as active
 
