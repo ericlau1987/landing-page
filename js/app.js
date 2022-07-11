@@ -58,7 +58,7 @@ function create_nav_bar(sections_list) {
         var a = document.createElement('a')
         a.classList.add("menu__link")
         a.id = "menu__link__section" + (i+1)
-        // a.href = "#section" + (i+1)
+        a.href = "javascript:void(0)"
         a.innerText = sections_list[i]
         newElment.appendChild(a)
         fragment.appendChild(newElment)
