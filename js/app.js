@@ -31,7 +31,9 @@ let sections_list = 0
 */
 function return_sessions() {
     const sections_list = document.querySelectorAll('section')
-    var sections_nav = []
+    let sections_nav = []
+    let curElement = ""
+
 
     for (let i=0; i<sections_list.length; i++) {
         curElement = sections_list[i].getAttribute("data-nav")
@@ -50,12 +52,12 @@ function return_sessions() {
 // build the nav
 function create_nav_bar(sections_list) {
     
-    var ul = document.getElementById("navbar__list")
-    var fragment = document.createDocumentFragment()
+    const ul = document.getElementById("navbar__list")
+    let fragment = document.createDocumentFragment()
 
     for (let i=0; i<sections_list.length; i++) {
-        var newElment = document.createElement('li')
-        var a = document.createElement('a')
+        let newElment = document.createElement('li')
+        let a = document.createElement('a')
         a.classList.add("menu__link")
         a.id = "menu__link__section" + (i+1)
         a.href = "javascript:void(0)"
@@ -77,7 +79,7 @@ function change_nav_bar_color(font_color) {
 // Scroll to anchor ID using scrollTO event
 function scrolling_to_section(event){
 
-    var e = event.target
+    const e = event.target
     if (e.id.includes("menu__link__section")) {
         target_session = e.id.replace("menu__link__", "")
         document.getElementById(target_session).scrollIntoView(
