@@ -83,7 +83,7 @@ function makeActive() {
         // Apply active state on the current section and the corresponding Nav link.
         if (section.classList != "active") {
             // only update the class name when the section is not active
-            console.log(section.id)
+            // console.log(section.id)
             section.classList = "active"
         }
         
