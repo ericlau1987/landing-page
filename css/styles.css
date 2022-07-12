@@ -68,6 +68,7 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    display: block;
 }
 
 .navbar__menu li {
@@ -77,12 +78,18 @@ section {
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;
-    font-weight: bold;
+    font-weight:bolder;
     text-decoration: none;
     color: #000;
-}
+} 
 
 .navbar__menu .menu__link:hover {
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
+#navbar__list ul li:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
@@ -159,7 +166,7 @@ section:nth-of-type(even) .landing__container::before {
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(3n) .landing__container::after {
+section:nth-of-type(odd) .landing__container::after {
     content: '';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
@@ -174,7 +181,7 @@ section:nth-of-type(3n) .landing__container::after {
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(3n + 1) .landing__container::after {
+section:nth-of-type(even) .landing__container::after {
     content: '';
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
@@ -193,18 +200,22 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+section.active {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.218) 50%, rgba(0, 0, 0, 0) 100%); 
 }
 
-section.your-active-class .landing__container::before {
-    opacity: 1;
+section.active h2{
+    font-style: italic;
+}
+
+section.active .landing__container::before {
+    opacity: 10;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
-    opacity: 1;
+section.active .landing__container::after {
+    opacity: 10;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
