@@ -69,7 +69,6 @@ section {
     margin: 0;
     text-align: right;
     display: block;
-    /* color: rgba(0, 0, 0, 0); */
 }
 
 .navbar__menu li {
@@ -79,9 +78,9 @@ section {
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;
-    font-weight: bold;
+    font-weight:bolder;
     text-decoration: none;
-    /* color: #333; */
+    color: #000;
 } 
 
 .navbar__menu .menu__link:hover {

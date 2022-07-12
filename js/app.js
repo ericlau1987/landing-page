@@ -68,11 +68,6 @@ function create_nav_bar(sections_list) {
     ul.appendChild(fragment)
 }
 
-function change_nav_bar_color(font_color) {
-
-    document.getElementById("navbar__list").style.color = font_color
-}
-
 // Add class 'active' to section when near top of viewport
 function makeActive() {
     const sections = document.querySelectorAll('section')
@@ -120,7 +115,6 @@ function scrolling_to_section(event){
 sections_list = return_sessions()
 if (sections_list) {
     create_nav_bar(sections_list)
-    change_nav_bar_color("black")
 }
 
 // Scroll to section on link click
