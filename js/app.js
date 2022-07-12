@@ -74,7 +74,26 @@ function change_nav_bar_color(font_color) {
 }
 
 // Add class 'active' to section when near top of viewport
-
+function makeActive() {
+    const sections = document.querySelectorAll('section')
+    for (const section of sections) {
+      const box = section.getBoundingClientRect();
+      // You can play with the values in the "if" condition to further make it more accurate. 
+      if (box.top <= 150 && box.bottom >= 150) {
+        // Apply active state on the current section and the corresponding Nav link.
+        if (section.classList != "active") {
+            // only update the class name when the section is not active
+            console.log(section.id)
+            section.classList = "active"
+        }
+        
+      } else {
+        // Remove active state from other section and corresponding Nav link.
+        // console.log('not active')
+        section.classList = ""
+      }
+    }
+  }
 
 // Scroll to anchor ID using scrollTO event
 function scrolling_to_section(event){
@@ -109,5 +128,6 @@ if (sections_list) {
 document.addEventListener('click',  scrolling_to_section)
 
 // Set sections as active
-
+document.addEventListener("scroll", makeActive);
+  
 
