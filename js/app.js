@@ -29,13 +29,14 @@ let sections_list = 0
  * Start Helper Functions
  * 
 */
+// the function is to return a list of section with data-nav
 function return_sessions() {
     const sections_list = document.querySelectorAll('section')
     let sections_nav = []
     let curElement = ""
 
-
     for (let i=0; i<sections_list.length; i++) {
+        // get value of data-nav
         curElement = sections_list[i].getAttribute("data-nav")
         sections_nav.push(curElement)
     }
