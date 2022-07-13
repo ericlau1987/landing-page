@@ -24,14 +24,9 @@
 
 - [About](#about)
 - [How the landing page works](#how)
-- [Dependencies / Limitations](#limitations)
-- [Future Scope](#future_scope)
-- [Setting up a local environment](#getting_started)
-- [Usage](#usage)
+- [Future Updates](#future_updates)
 - [Technology Stack](#tech_stack)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgments)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -43,7 +38,7 @@ In the project, a multi-section landing page is developed with a dynamically upd
  - The landing page can direct users to a section when select the section on the naviagtion menu;
  - The landing page can identify which section is within viewpoint and then highlight it in the naviation menu. 
 
-## 🚀 Future updates <a name = "future_scope"></a>
+## 🚀 Future updates <a name = "future_updates"></a>
 
 - Hide fixed navigation bar while not scrolling (it should still be present on page load);
 - setTimeout can be used to check when the user is no longer scrolling;
@@ -58,4 +53,4 @@ In the project, a multi-section landing page is developed with a dynamically upd
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [Eric liu](https://https://github.com/ericlau1987)
+- [Eric Liu](https://https://github.com/ericlau1987)
