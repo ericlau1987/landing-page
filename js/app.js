@@ -40,7 +40,7 @@ function return_sessions() {
         curElement = sections_list[i].getAttribute("data-nav")
         sections_nav.push(curElement)
     }
-    return sections_nav
+    return sections_nav;
 }
 /**
  * End Helper Functions
@@ -64,7 +64,7 @@ function create_nav_bar(sections_list) {
         newElment.appendChild(a)
         fragment.appendChild(newElment)
     }
-    ul.appendChild(fragment)
+    ul.appendChild(fragment);
 }
 
 // Add class 'active' to section when near top of viewport
@@ -82,7 +82,6 @@ function makeActive() {
             section.classList = "active"
             nav_bar_section.classList.add("navbar__active__section")
         }
-        
       } else {
         // Remove active state from other section and corresponding Nav link.
         section.classList = ""
@@ -103,7 +102,6 @@ function scrolling_to_section(event){
             }
         )
     }
-    
 }
 
 /**
@@ -115,12 +113,12 @@ function scrolling_to_section(event){
 // Build menu 
 sections_list = return_sessions()
 if (sections_list) {
-    create_nav_bar(sections_list)
+    create_nav_bar(sections_list);
 }
 
 // Scroll to section on link click
 
-document.addEventListener('click',  scrolling_to_section)
+document.addEventListener('click',  scrolling_to_section);
 
 // Set sections as active
 document.addEventListener("scroll", makeActive);
