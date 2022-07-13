@@ -74,6 +74,8 @@ function makeActive() {
     const sections = document.querySelectorAll('section')
     for (const section of sections) {
       const box = section.getBoundingClientRect();
+      let nav_bar_section_id = "menu__link__" + section.id;
+      let nav_bar_section = document.getElementById(nav_bar_section_id)
       // You can play with the values in the "if" condition to further make it more accurate. 
       if (box.top <= 150 && box.bottom >= 150) {
         // Apply active state on the current section and the corresponding Nav link.
@@ -81,12 +83,14 @@ function makeActive() {
             // only update the class name when the section is not active
             // console.log(section.id)
             section.classList = "active"
+            nav_bar_section.classList.add("nav__active__section")
         }
         
       } else {
         // Remove active state from other section and corresponding Nav link.
         // console.log('not active')
         section.classList = ""
+        nav_bar_section.classList.remove("nav__active__section")
       }
     }
   }
