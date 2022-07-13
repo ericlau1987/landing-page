@@ -42,8 +42,6 @@ function return_sessions() {
     }
     return sections_nav
 }
-
-
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -81,14 +79,12 @@ function makeActive() {
         // Apply active state on the current section and the corresponding Nav link.
         if (section.classList != "active") {
             // only update the class name when the section is not active
-            // console.log(section.id)
             section.classList = "active"
             nav_bar_section.classList.add("navbar__active__section")
         }
         
       } else {
         // Remove active state from other section and corresponding Nav link.
-        // console.log('not active')
         section.classList = ""
         nav_bar_section.classList.remove("navbar__active__section")
       }
@@ -128,5 +124,3 @@ document.addEventListener('click',  scrolling_to_section)
 
 // Set sections as active
 document.addEventListener("scroll", makeActive);
-  
-
