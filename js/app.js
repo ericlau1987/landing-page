@@ -31,9 +31,9 @@ let sections_list = 0
 */
 // the function is to return a list of section with data-nav
 function return_sessions() {
-    const sections_list = document.querySelectorAll('section')
-    let sections_nav = []
-    let curElement = ""
+    const sections_list = document.querySelectorAll('section');
+    let sections_nav = [];
+    let curElement = "";
 
     for (let i=0; i<sections_list.length; i++) {
         // get value of data-nav
@@ -51,12 +51,12 @@ function return_sessions() {
 // build the nav
 function create_nav_bar(sections_list) {
     
-    const ul = document.getElementById("navbar__list")
-    let fragment = document.createDocumentFragment()
+    const ul = document.getElementById("navbar__list");
+    let fragment = document.createDocumentFragment();
 
     for (let i=0; i<sections_list.length; i++) {
-        let newElment = document.createElement('li')
-        let a = document.createElement('a')
+        let newElment = document.createElement('li');
+        let a = document.createElement('a');
         a.classList.add("menu__link")
         a.id = "menu__link__section" + (i+1)
         a.href = "javascript:void(0)"
@@ -73,7 +73,7 @@ function makeActive() {
     for (const section of sections) {
       const box = section.getBoundingClientRect();
       let nav_bar_section_id = "menu__link__" + section.id;
-      let nav_bar_section = document.getElementById(nav_bar_section_id)
+      let nav_bar_section = document.getElementById(nav_bar_section_id);
       // You can play with the values in the "if" condition to further make it more accurate. 
       if (box.top <= 150 && box.bottom >= 150) {
         // Apply active state on the current section and the corresponding Nav link.
@@ -93,7 +93,7 @@ function makeActive() {
 // Scroll to anchor ID using scrollTO event
 function scrolling_to_section(event){
 
-    const e = event.target
+    const e = event.target;
     if (e.id.includes("menu__link__section")) {
         target_session = e.id.replace("menu__link__", "")
         document.getElementById(target_session).scrollIntoView(
