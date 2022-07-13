@@ -80,10 +80,15 @@ section {
     padding: 1em;
     font-weight:bolder;
     text-decoration: none;
-    color: #000;
 } 
 
 .navbar__menu .menu__link:hover {
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
+.navbar__active__section {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;

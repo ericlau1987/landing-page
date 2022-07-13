@@ -83,14 +83,14 @@ function makeActive() {
             // only update the class name when the section is not active
             // console.log(section.id)
             section.classList = "active"
-            nav_bar_section.classList.add("nav__active__section")
+            nav_bar_section.classList.add("navbar__active__section")
         }
         
       } else {
         // Remove active state from other section and corresponding Nav link.
         // console.log('not active')
         section.classList = ""
-        nav_bar_section.classList.remove("nav__active__section")
+        nav_bar_section.classList.remove("navbar__active__section")
       }
     }
   }
